@@ -1,3 +1,0 @@
-== README
-
-App to manage Campus Recruitment
