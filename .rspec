@@ -1,5 +1,6 @@
 --format Fuubar
 --colour
+--require spec_helper
 --format html
 --out spec/reports/index.html
 --profile
