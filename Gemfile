@@ -5,10 +5,11 @@ gem 'rails', '4.1.8'
 gem 'uglifier', '>= 1.3.0'
 gem 'turbolinks'
 gem 'pg'
+gem 'bcrypt'
 
 group :development, :test do
  gem 'simplecov'
  gem 'rspec-rails'
  gem 'fuubar'
- gem 'factory_girl'
+ gem 'factory_girl_rails'
 end
