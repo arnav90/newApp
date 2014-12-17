@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-describe Student do
+describe Student , type: :Model do
   it 'should create a student' do
-    student_params = { name: 'Ooga Booga', roll_no: '2008ts475', college: 'Ooga'}
-    expect(Student.create({details: student_params})).to be_truthy
+    student = Student.new({ details: {name: 'Ooga Booga', roll_no: '2008ts475', college: 'Ooga'}})
+    expect(student.save!).to be_truthy
   end
 end
