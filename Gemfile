@@ -16,4 +16,6 @@ group :development, :test do
  gem 'fuubar'
  gem 'shoulda-matchers'
  gem 'factory_girl_rails'
+ gem 'pry'
+ gem 'pry-nav'
 end
