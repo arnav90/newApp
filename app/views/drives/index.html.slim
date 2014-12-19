@@ -1,0 +1,14 @@
+table
+  thead
+    td S.No
+    td Name
+    td Details
+  tbody
+    - for drive in @drive
+      tr
+        td
+          = link_to "#{drive.id}", drive
+        td
+          = drive.name
+        td
+           = drive.details

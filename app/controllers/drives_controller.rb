@@ -17,6 +17,10 @@ class DrivesController < ApplicationController
     @drive = Drive.find_by_id params[:id]
   end
 
+  def index
+    @drive=Drive.all
+  end
+
   private
 
   def drive_params

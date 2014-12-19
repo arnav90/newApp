@@ -26,4 +26,16 @@ describe DrivesController, type: :controller do
       expect(controller.instance_variable_get(:@drive)).to eql(drive)
     end
   end
+
+  context '#index' do
+    it 'should fetch all drives' do
+      drive1 =  Drive.create({name: 'ooga'})
+      drive2 =  Drive.create({name: 'booga'})
+      get :index
+      expect(controller.instance_variable_get(:@drive).count).to eql(Drive.all.count)
+    end
+    it 'should render list of drives' do
+      expect(get(:index)).to render_template('drives/index')
+    end
+  end
 end
