@@ -29,8 +29,7 @@ describe DrivesController, type: :controller do
 
   context '#index' do
     it 'should fetch all drives' do
-      drive1 =  Drive.create({name: 'ooga'})
-      drive2 =  Drive.create({name: 'booga'})
+      Drive.create([{name: 'ooga'},{name: 'boga'}])
       get :index
       expect(controller.instance_variable_get(:@drive).count).to eql(Drive.all.count)
     end
