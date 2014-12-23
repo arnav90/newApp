@@ -15,4 +15,15 @@ describe 'routing', type: :routing do
       expect(get('/drives')).to route_to('drives#index')
     end
   end
+  context 'Sessions' do
+    it 'should route to login' do
+      expect(get('/login')).to route_to('sessions#new')
+    end
+    it 'should route to create' do
+      expect(post('/login')).to route_to('sessions#create')
+    end
+    it 'should route to logout' do
+      expect(get('/logout')).to route_to('sessions#destroy')
+    end
+  end
 end
