@@ -1,5 +1,7 @@
 class DrivesController < ApplicationController
 
+  before_filter :check_for_login
+
   def new
    @drive = Drive.new
   end

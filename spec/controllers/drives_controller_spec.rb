@@ -1,6 +1,10 @@
 require 'rails_helper'
 
 describe DrivesController, type: :controller do
+  before :each do
+    ApplicationController.any_instance.stub(:check_for_login).and_return(true)
+  end
+
   context '#new' do
     it 'should render create drive page' do
       expect(get(:new)).to render_template('drives/new')
