@@ -1,6 +1,12 @@
-= form_tag '/login'
-  | Email
-  = text_field_tag :email, params[:email]
-  | Password
-  = password_field_tag :password, params[:password]
-  = submit_tag 'Login'
+#login-page
+  .ui.page.grid
+    .three.column.centered.row
+      .column
+        = form_tag '/login', class: 'ui form'
+        .field
+          label Email
+          = text_field_tag :email, params[:email]
+        .field
+          label Password
+          = password_field_tag :password, params[:password]
+        = submit_tag 'Login', class: 'ui button primary'

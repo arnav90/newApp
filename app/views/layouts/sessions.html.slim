@@ -5,9 +5,4 @@ html
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track'=> true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
   body
-    .ui.secondary.pointing.menu
-      .container
-        .title.item
-          = link_to 'CampusHunter-2.0', root_path
-        a.title.item.right href='/logout' Log Out
     = yield

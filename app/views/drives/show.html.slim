@@ -1,5 +1,7 @@
-.data
-  'Name:
-  = @drive.name
-  'Details:
-  = @drive.details
+#show-drive
+  .ui.page.grid
+    .one.column.centered.grid
+      .column
+        h1.ui.header = @drive.name
+        'Details:
+        = @drive.details

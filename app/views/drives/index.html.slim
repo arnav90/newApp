@@ -1,19 +1,27 @@
 #drives-list-page
   .content
-    table.ui.celled.striped.table
-      thead
-        tr
-          th S.No
-          th Name
-          th Details
-      tbody
-        - for drive in @drive
-          tr
-            td
-              = link_to "#{drive.id}", drive
-            td
-              = drive.name
-            td
-              = drive.details
-    div
-      = link_to 'Add New Drive', '/drives/new'
+    .ui.page.grid
+      .one.column.centered.row
+        .column
+          h1.ui.header
+            | Recruitment Drives
+          div
+            = link_to 'Add New Drive', '/drives/new'
+          - unless @drive.count == 0
+            table.ui.celled.striped.table
+              thead
+                tr
+                  th S.No
+                  th Name
+                  th Details
+              tbody
+                - for drive in @drive
+                  tr
+                    td
+                      = link_to "#{drive.id}", drive
+                    td
+                      = drive.name
+                    td
+                      = drive.details
+          - else
+            h3.ui.header No drives here
