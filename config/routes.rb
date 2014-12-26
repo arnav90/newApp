@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'drives#index'
-  resources :drives
+  resources :drives, except: :new
   get 'login' => 'sessions#new', as: 'login'
   post 'login' => 'sessions#create'
   get 'logout' => 'sessions#destroy', as: 'logout'
