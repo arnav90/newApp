@@ -53,6 +53,8 @@ RSpec.configure do |config|
 
   config.include FactoryGirl::Syntax::Methods
 
+  config.raise_errors_for_deprecations!
+
   config.before :suite do
     begin
       FactoryGirl.lint
