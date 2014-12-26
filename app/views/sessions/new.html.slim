@@ -10,4 +10,5 @@
           .field
             label Password
             = password_field_tag :password, params[:password], placeholder: 'Password'
-          = submit_tag 'Login', class: 'ui button green'
+          .login-button
+            = submit_tag 'Login', class: 'ui button green right'
