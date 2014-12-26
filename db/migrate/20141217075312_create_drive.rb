@@ -2,7 +2,7 @@ class CreateDrive < ActiveRecord::Migration
   def change
     create_table :drives do |t|
       t.text :name
-      t.hstore :details
+      t.hstore :details , default: {}
     end
 
     change_table :students do|t|

@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20141223121654) do
 
   create_table "drives", force: true do |t|
     t.text   "name"
-    t.hstore "details"
+    t.hstore "details", default: {}
   end
 
   create_table "students", force: true do |t|
