@@ -4,11 +4,14 @@ html
     title CampusHunter-2.0
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track'=> true
     = stylesheet_link_tag 'sessions', params[:controller], media: 'all'
+    = stylesheet_link_tag 'drives', params[:controller], media: 'all'
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = javascript_include_tag 'drives', params[:controller]
   body
-    .ui.secondary.pointing.menu
+    #navbar.ui.primary.menu
       .container
-        .title.item
+        .header.item
           = link_to 'CampusHunter-2.0', root_path
-        a.title.item.right href='/logout' Log Out
+        .title.item.right
+          = link_to 'Log Out', logout_path
     = yield
