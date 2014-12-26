@@ -2,13 +2,7 @@ require 'rails_helper'
 
 describe DrivesController, type: :controller do
   before :each do
-    ApplicationController.any_instance.stub(:check_for_login).and_return(true)
-  end
-
-  context '#new' do
-    it 'should render create drive page' do
-      expect(get(:new)).to render_template('drives/new')
-    end
+    allow_any_instance_of(ApplicationController).to receive(:check_for_login).and_return(true)
   end
 
   context '#create'do
@@ -17,9 +11,9 @@ describe DrivesController, type: :controller do
       expect(post(:create, params)).to redirect_to("/drives/#{controller.instance_variable_get(:@drive)[:id]}")
     end
 
-    it 'should render new_drive if there is an error' do
+    it 'should render index page if there is an error' do
       params = {drive: {ooga: 'booga'}}
-      expect(post(:create, params)).to render_template('drives/new')
+      expect(post(:create, params)).to render_template('drives/index')
     end
   end
 

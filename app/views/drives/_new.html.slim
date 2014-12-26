@@ -1,0 +1,17 @@
+#new-drive-modal.ui.standard.modal
+  i.close.icon
+  .header
+    | New Recruitment Drive
+  .content
+    = form_tag '/drives', class: 'ui form', id: 'new-drive-form'
+      .field
+        label for='name' Name
+        input id='drive_name' type='text' name="drive[name]"
+      .field
+        label for='Description' Description
+        input id='drive_details_description' type='text' name="drive[details][description]"
+  .actions
+    .ui.negative.button
+      | Cancel
+    .ui.positive.button
+      | Create
