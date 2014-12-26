@@ -11,5 +11,6 @@
  * file per style scope.
  *
  *= require semantic_ui/semantic_ui
+ *= require base
  *= require_self
  */
