@@ -17,7 +17,7 @@
                 tr
                   th S.No
                   th Name
-                  th Details
+                  th Description
               tbody
                 - for drive in @drive
                   tr
@@ -26,7 +26,7 @@
                     td
                       = drive.name
                     td
-                      = drive.details
+                      = drive.details['description']
           - else
             h3.ui.header No drives here
   = render 'new'

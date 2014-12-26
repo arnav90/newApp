@@ -23,6 +23,8 @@ class DrivesController < ApplicationController
   private
 
   def drive_params
-    params.require(:drive).permit(:name,:details)
+    params.require(:drive).permit(:name).tap do |whitelisted|
+      whitelisted[:details] = params[:drive][:details]
+    end
   end
 end
