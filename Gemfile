@@ -6,9 +6,10 @@ gem 'uglifier', '>= 1.3.0'
 gem 'turbolinks'
 gem 'pg'
 gem 'bcrypt'
-gem 'less-rails-semantic_ui', '1.3.2.0'
+gem 'less-rails-semantic_ui', '1.4.1.0'
 gem 'slim-rails'
 gem 'therubyracer'
+gem 'jquery-rails'
 
 group :development, :test do
  gem 'simplecov'
