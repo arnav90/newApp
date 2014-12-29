@@ -1,0 +1,25 @@
+#add-students-modal.ui.standard.small.modal
+  i.close.icon
+  .header
+    | Add Students
+  .content
+    .ui.grid
+      .one.column.centered.row
+        .column
+          | Select the file to be uploaded
+      .two.column.centered.row
+        .left.aligned.column
+          label
+            | No File Selected
+        .right.aligned.column
+          .ui.blue.button
+            | Select File
+          = form_tag '/drives/upload', class: 'ui form', id: 'students-file', style: 'display:none'
+           .field
+             input id='added-file' type='file' name="drive[students-data]"
+  .actions
+    .ui.negative.button
+      | Cancel
+    .ui.positive.button
+      i.upload.icon
+      | Upload

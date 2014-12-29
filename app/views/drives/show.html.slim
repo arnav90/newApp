@@ -1,7 +1,13 @@
-#show-drive
-  .ui.page.grid
-    .one.column.centered.grid
-      .column
-        h1.ui.header = @drive.name
-        'Description:
-        = @drive.details['description']
+#drives-show-page
+  .content
+    .ui.page.grid
+      .two.column.row
+        .column
+          h1.ui.header = @drive.name
+          'Description:
+          = @drive.details['description']
+        #upload-students-button.column
+          .ui.green.button onClick="formModalTrigger('add-students-modal','upload-students-list');"
+            | Add Students
+
+    = render 'upload_student_list'

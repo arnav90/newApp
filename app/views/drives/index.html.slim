@@ -6,13 +6,13 @@
           h1.ui.header
             | Recruitment Drives
         #new-drive-button.column
-          .ui.green.button onClick='newDriveModal();'
+          .ui.green.button onClick="formModalTrigger('new-drive-modal','new-drive-form');"
             i.plus.icon
             | Add New Drive
       .one.column.centered.row
         .column
           - if @drive.count > 0
-            table.ui.celled.striped.table id='drives-list'
+            table.ui.celled.striped.compact.table id='drives-list'
               thead
                 tr
                   th S.No
