@@ -8,3 +8,7 @@ function formModalTrigger(modal,form){
         }
     }).modal('show')
 }
+
+function fileUpload(){
+    $('#added-file').click();
+}

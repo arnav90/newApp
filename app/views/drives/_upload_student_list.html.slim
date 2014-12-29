@@ -9,14 +9,14 @@
           | Select the file to be uploaded
       .two.column.centered.row
         .left.aligned.column
-          label
+          label#file-name
             | No File Selected
         .right.aligned.column
-          .ui.blue.button
+          .ui.blue.button onClick="fileUpload();"
             | Select File
           = form_tag '/drives/upload', class: 'ui form', id: 'students-file', style: 'display:none'
            .field
-             input id='added-file' type='file' name="drive[students-data]"
+             input id='added-file' type='file' name="drive[students-data]" accept=".csv"
   .actions
     .ui.negative.button
       | Cancel
