@@ -7,7 +7,7 @@ describe DrivesController, type: :controller do
 
   context '#create'do
     it 'should create a drive' do
-      params = {drive: {name: 'First Drive'}}
+      params = {drive: attributes_for(:simple_drive)}
       expect(post(:create, params)).to redirect_to("/drives/#{controller.instance_variable_get(:@drive)[:id]}")
     end
 
@@ -19,7 +19,7 @@ describe DrivesController, type: :controller do
 
   context '#show' do
     it 'should fetch the requested drive' do
-      drive = Drive.create({name: 'Ooga'})
+      drive = create(:simple_drive)
       get :show, id: drive.id
       expect(controller.instance_variable_get(:@drive)).to eql(drive)
     end
@@ -27,7 +27,7 @@ describe DrivesController, type: :controller do
 
   context '#index' do
     it 'should fetch all drives' do
-      Drive.create([{name: 'ooga'},{name: 'boga'}])
+      create(:simple_drive)
       get :index
       expect(controller.instance_variable_get(:@drive).count).to eql(Drive.all.count)
     end
