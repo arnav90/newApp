@@ -16,7 +16,7 @@
             | Select File
           = form_tag '/drives/upload', class: 'ui form', id: 'students-file', style: 'display:none', multipart: true
            .field
-             input id='added-file' type='file' name="drive[students_data]" accept=".csv"
+             input id='added-file' type='file' name="drive[students_data]" accept=".csv" onChange='fileAdded()'
   .actions
     .ui.negative.button
       | Cancel
