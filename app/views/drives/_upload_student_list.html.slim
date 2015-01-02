@@ -13,6 +13,7 @@
             | No File Selected
         .right.aligned.column
           .ui.blue.button onClick="fileUpload();"
+            i.file.icon
             | Select File
           = form_tag '/drives/upload', class: 'ui form', id: 'students-file', style: 'display:none', multipart: true
            .field

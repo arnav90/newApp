@@ -18,7 +18,9 @@ function fileUpload(){
 }
 
 function fileAdded(){
-    var file=document.getElementById('added-file').value;
+    var file=document.getElementById('added-file');
     var label=document.getElementById('file-name');
-    file.length > 0 ? label.textContent = file : label.textContent = 'No File Selected';
+    if (file != null && label != null ) {
+        file.value.length > 0 ? label.textContent = file.value : label.textContent = 'No File Selected';
+    }
 }

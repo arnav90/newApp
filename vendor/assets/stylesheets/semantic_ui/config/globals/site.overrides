@@ -1,3 +1,18 @@
 /*******************************
          Site Overrides
 *******************************/
+.ui.modal{
+  border-radius: 0;
+  .header, .actions, .content{
+    background: white;
+    border: none;
+  }
+  .actions, .content{
+    .button{
+      border-radius: 0;
+    }
+  }
+  .content{
+    padding: 0 2rem 0 2rem;
+  }
+}

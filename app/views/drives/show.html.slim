@@ -8,6 +8,7 @@
           = @drive.details['description']
         #upload-students-button.column
           .ui.green.button onClick="formModalTrigger('add-students-modal','students-file');"
+            i.users.icon
             | Add Students
 
     = render 'upload_student_list'
