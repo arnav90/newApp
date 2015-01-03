@@ -58,6 +58,7 @@ RSpec.configure do |config|
   config.before :suite do
     begin
       FactoryGirl.lint
+      STUDENT_CSV_FILE = File.join("#{Rails.root}",'spec','data','sample_student_list.csv')
     end
   end
 end
