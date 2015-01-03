@@ -11,6 +11,9 @@ describe 'routing', type: :routing do
     it 'should route to #index' do
       expect(get('/drives')).to route_to('drives#index')
     end
+    it 'should route to #upload_students' do
+      expect(post('/drives/upload_students')).to route_to('drives#upload_students')
+    end
   end
   context 'Sessions' do
     it 'should route to login' do

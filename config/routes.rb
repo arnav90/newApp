@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
   root 'drives#index'
-  resources :drives, except: :new
+  resources :drives, except: [:new, :edit]
   get 'login' => 'sessions#new', as: 'login'
   post 'login' => 'sessions#create'
   get 'logout' => 'sessions#destroy', as: 'logout'
+  post 'drives/upload_students' => 'drives#upload_students'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
