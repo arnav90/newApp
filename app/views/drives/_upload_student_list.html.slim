@@ -15,8 +15,9 @@
           .ui.blue.button onClick="fileUpload();"
             i.file.icon
             | Select File
-          = form_tag '/drives/upload', class: 'ui form', id: 'students-file', style: 'display:none', multipart: true
+          = form_tag '/drives/upload_students', class: 'ui form', id: 'students-file', style: 'display:none', multipart: true
            .field
+             input id='drive' type='text' name='drive[id]' value=@drive.id
              input id='added-file' type='file' name="drive[students_data]" accept=".csv" onChange='fileAdded()'
   .actions
     .ui.negative.button

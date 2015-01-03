@@ -1,4 +1,5 @@
 class DrivesController < ApplicationController
+  include Jadoo
 
   before_filter :check_for_login
 
@@ -18,6 +19,13 @@ class DrivesController < ApplicationController
 
   def index
     @drive=Drive.all
+  end
+
+  def upload_students
+    @drive = Drive.find_by_id params[:drive][:id]
+    file = params[:drive][:students_data].tempfile
+    Jadoo::StudentImport.from_csv file, @drive
+    redirect_to @drive
   end
 
   private

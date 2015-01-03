@@ -35,4 +35,12 @@ describe DrivesController, type: :controller do
       expect(get(:index)).to render_template('drives/index')
     end
   end
+
+  context '#upload_students' do
+    it 'should create students from a csv file' do
+      drive = create(:simple_drive)
+      post :upload_students, {drive: {id: drive.id, students_data: ActionDispatch::Http::UploadedFile.new(tempfile: STUDENT_CSV_FILE, filename: 'student_file.csv')}}
+      expect(drive.students.count).to eql(5)
+    end
+  end
 end

@@ -10,5 +10,16 @@
           .ui.green.button onClick="formModalTrigger('add-students-modal','students-file');"
             i.users.icon
             | Add Students
+      .one.column.row
+        .column
+          - if @drive.students.count > 0
+            table.ui.celled.striped.compact.table id='students'
+              thead
+              tbody
+                tr
+                  td
+                    = @drive.students.count
+          - else
+            h3.ui.header No Students Here
 
     = render 'upload_student_list'
