@@ -14,6 +14,7 @@ class DrivesController < ApplicationController
 
   def show
     @drive = Drive.find_by_id params[:id]
+    @students = @drive.students.paginate(page: params[:page],per_page: 10)
     throw_404 if @drive.nil?
   end
 

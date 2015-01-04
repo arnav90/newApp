@@ -10,6 +10,7 @@ gem 'less-rails-semantic_ui', '1.4.1.0'
 gem 'slim-rails'
 gem 'therubyracer'
 gem 'jquery-rails'
+gem 'will_paginate'
 
 group :development, :test do
  gem 'simplecov'
