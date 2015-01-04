@@ -9,8 +9,8 @@ module Jadoo
           student = Student.new({details: row.to_hash,drive: drive})
           student.save
         end
-        drive.details['student_fields'] = students.headers.join('|*|')
-        drive.save
+        drive.update(student_fields: students.headers.join('|*|'))
+        drive
       end
     end
   end

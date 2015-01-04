@@ -14,7 +14,7 @@ describe Jadoo do
       end
       it 'should populate student fields in drive' do
         Jadoo::StudentImport.from_csv(STUDENT_CSV_FILE,@drive)
-        expect(@drive.details['student_fields']).to_not be_nil
+        expect(@drive.student_fields).to_not be_nil
       end
     end
   end

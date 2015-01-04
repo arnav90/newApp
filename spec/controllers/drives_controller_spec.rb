@@ -41,6 +41,7 @@ describe DrivesController, type: :controller do
       drive = create(:simple_drive)
       post :upload_students, {drive: {id: drive.id, students_data: ActionDispatch::Http::UploadedFile.new(tempfile: STUDENT_CSV_FILE, filename: 'student_file.csv')}}
       expect(drive.students.count).to eql(5)
+      expect(Drive.find_by_id(drive.id).student_fields).to_not eql(attributes_for(:simple_drive)[:student_fields])
     end
   end
 end

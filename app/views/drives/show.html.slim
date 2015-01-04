@@ -15,10 +15,16 @@
           - if @drive.students.count > 0
             table.ui.celled.striped.compact.table id='students'
               thead
-              tbody
                 tr
-                  td
-                    = @drive.students.count
+                  - for field in student_fields(@drive)
+                     th
+                       = field.titleize
+              tbody
+                - for student in @drive.students
+                  tr
+                    - for field in student_fields(@drive)
+                      td
+                        = student.details[field]
           - else
             h3.ui.header No Students Here
 
