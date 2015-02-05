@@ -4,3 +4,5 @@
 .idea
 spec/reports
 coverage
+.bundle
+vendor/bundle
