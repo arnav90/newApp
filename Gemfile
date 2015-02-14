@@ -11,6 +11,7 @@ gem 'slim-rails'
 gem 'therubyracer'
 gem 'jquery-rails'
 gem 'will_paginate'
+gem 'autoprefixer-rails'
 
 group :development, :test do
  gem 'simplecov'
