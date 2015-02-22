@@ -1,5 +1,5 @@
 module StudentFieldsHelper
   def student_fields drive
-    drive.student_fields.split('|*|') unless drive.student_fields.nil?
+    Jadoo::DriveHelpers.student_fields(drive)
   end
 end

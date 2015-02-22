@@ -1,0 +1,8 @@
+#students-search-box
+  = form_tag '/students/search', id: 'students-search'
+    .field
+      .ui.action.left.icon.input
+        input type='text' placeholder='Search Students...' name='query'
+        input type='hidden' name='drive' value=@drive.id
+        i.users.icon
+        .ui.blue.button onClick="document.getElementById('students-search').submit()" Search

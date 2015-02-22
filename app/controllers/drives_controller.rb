@@ -25,7 +25,7 @@ class DrivesController < ApplicationController
   def upload_students
     @drive = Drive.find_by_id params[:drive][:id]
     file = params[:drive][:students_data].tempfile
-    @drive = Jadoo::StudentImport.from_csv file, @drive
+    @drive = Jadoo::StudentHelpers.import_from_csv file, @drive
     redirect_to @drive
   end
 

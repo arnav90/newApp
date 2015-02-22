@@ -11,23 +11,31 @@
             i.users.icon
             | Add Students
       .one.column.row
-        .column
-          - if @drive.students.count > 0
-            = will_paginate(@students)
-            table.ui.celled.striped.compact.sortable.table id='students'
-              thead
-                tr
-                  - for field in student_fields(@drive)
-                     th
-                       = field.titleize
-              tbody
-                - for student in @students
+        - if @drive.students.count > 0
+          .ui.two.column.grid
+            .column
+              = render 'students/students_search_box'
+            .column
+              - if @drive.students.count > 20
+                = will_paginate(@students)
+          .one.column.row
+            .column
+              table.ui.celled.striped.compact.sortable.table id='students'
+                thead
                   tr
                     - for field in student_fields(@drive)
-                      td
-                        = student.details[field]
-            = will_paginate(@students)
-          - else
-            h3.ui.header No Students Here
+                      th
+                        = field.titleize
+                tbody
+                  - for student in @students
+                    tr
+                      - for field in student_fields(@drive)
+                        td
+                          = student.details[field]
+          .one.column.row
+            - if @drive.students.count > 20
+              = will_paginate(@students)
+        - else
+          h3.ui.header No Students Here
 
     = render 'upload_student_list'
